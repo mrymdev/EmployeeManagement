@@ -1,6 +1,6 @@
 # JustEat challenge
 
-This is the implementation of the Just Eat challenge, described in the Employee API - Coding Challenge - Career.pdf
+This is the implementation of the Just Eat challenge, described in this [README.pdf](EmployeeAPI-CodingChallenge-TaskDescription.pdf)
 
 ## Content
 
