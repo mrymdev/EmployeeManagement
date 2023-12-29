@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  mongo:
+    image: 'mongo:latest'
+    container_name: 'mongoDB'
+    ports:
+      - 27017:27017
+    networks:
+      - mynet
+    environment:
+      MONGO_INITDB_DATABASE: 'employee'
+    volumes:
+      - ./mongodata:/var/lib/mongo
+
+  challenge-app:
+    image: openjdk:17
+    volumes:
+      - ./target/:/app
+    command: bash -c "cd /app && java -jar EmployeeManagement-0.0.1-SNAPSHOT.jar"
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo
+    networks:
+      - mynet
+networks:
+  mynet:
+    driver: bridge
+
+
+
